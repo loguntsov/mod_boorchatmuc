@@ -77,16 +77,6 @@ get_roomdesc_tail(StateData, Lang) ->
   Len = maps:size(StateData#state.nicks),
   <<" (", Desc/binary, (integer_to_binary(Len))/binary, ")">>.
 
--spec get_mucroom_disco_items(state()) -> disco_items().
-get_mucroom_disco_items(StateData) ->
-  Items = maps:fold(
-    fun(Nick, _, Acc) ->
-      [#disco_item{jid = jid:make(StateData#state.room,
-        StateData#state.host,
-        Nick),
-        name = Nick}|Acc]
-    end, [], StateData#state.nicks),
-  #disco_items{items = Items}.
 
 
 

@@ -133,7 +133,6 @@ iq_disco_items(ServerHost, Host, From, Lang, MaxRoomsDiscoItems, Node, RSM)
       _ -> xmpp:encode(ResRSM)
     end
   },
-  ?INFO_MSG("XMLEl = ~p", [ XmlEl ]),
   {result, XmlEl};
 iq_disco_items(_ServerHost, _Host, _From, Lang, _MaxRoomsDiscoItems, _Node, _RSM) ->
   {error, xmpp:err_item_not_found(?T("Node not found"), Lang)}.

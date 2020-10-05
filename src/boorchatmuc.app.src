@@ -1,0 +1,11 @@
+{application, boorchatmuc, [
+  {description, "Extended MUC logic for Boorchat"},
+  {vsn, "1"},
+  {registered, []},
+  {applications, [
+    kernel,
+    stdlib
+  ]},
+  {mod, {boorchatmuc_app, []}},
+  {env, []}
+]}.
